@@ -77,7 +77,6 @@ $(".table").hover(function() {
  		}
  	},
  	function() {
- 		// $(".details", this).css("display", "none");
  		$(".details", this).hide(100);
  		$(this).css("background-color", "#EEEEEE");
  	}
