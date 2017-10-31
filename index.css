@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:900');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+html {
+	font-family: "Titillium Web";
+}
+
+body {
+	background-color: #EADBD8;
+	margin: 0;
+	padding: 0;
+}
+#flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 100px;
+	font-family: "Source Code Pro";
+}
+
+h1 {
+	color: #F43B31;
+	font-family: "Titillium Web";
+}
+
+#flex-container > div > h1 {
+		font-size: 4em;
+		padding: 0;
+		margin: 0;
+}
+
+#flex-container > div > h3 {
+	padding: 0;
+}
+
+.main-form {
+	display: flex;
+	height: 400px;
+	width: 400px;
+	justify-content: space-around;
+	background-color: white;
+	flex-wrap: wrap;
+	padding-top: 10px;
+	text-align: center;
+	border-radius: 5px
+}
+
+.table {
+	height: 110px;
+	width: 110px;
+	border-radius: 100%;
+	background-color: #EEEEEE;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	color: #AFAAAA;
+	opacity: .8;
+}
+
+.available {
+	background-color: lightgrey;
+	color: black;
+}
+
+.reserved {
+	background-color: #ADAAAA;
+	color: #C6CACB;
+}
+
+
+/*Begin the CSS for the popup form */
+
+#reserveTable {
+	background-color: white;
+	position: absolute;
+	margin: 0 auto;
+	box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
+	margin-top: 100px;
+	display: none;
+	z-index: 2;
+}
+
+.header {
+  color: black;
+  text-align: left;
+  border-top: 1px solid white;
+  padding: 10px 0 0 0;
+}
+
+.flex-item {
+  background-color: white;
+  width: 475px;
+  height: 375px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+#hello, #tableNumber {
+  text-align: left;
+  margin-left: 45px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#tableNumber {
+	margin-bottom: 20px;
+}
+
+input {
+  margin: 10px 45px;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+button {
+  margin: 30px 45px 40px 45px;
+  padding: 25px;
+  background-color: #008700;
+  color: white;
+  border: none;
+}
+
+button:focus {
+  border: none;
+  outline: none;
+}
+
+.flex-item p{
+  text-align: center;ter;
+  font-size: .75em;
+  margin-top: 0;
+  color: #ccc;
+}
+
+a {
+  color: #ccc;
+}
+
+a:hover {
+  color: skyblue;
+  opacity: .7;
+}
+
+button:hover {
+  opacity: .5;
+}
+
+#inputError {
+  font-size: 0.75em;
+  color: red;
+  font-weight: 700;
+  text-align: center;
+}
+
+#trouble {
+  text-align: center;
+  margin-bottom: 0px;
+  /*padding: 0 45px;*/
+}
+
+.header-box {
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 220px;
+}
+
+#goback {
+	font-weight: 800;
+	font-size: 1.25em;
+	text-align: right;
+	color: black;
+	text-decoration: none;
+	margin: 0 20px 20px 0;
+}
