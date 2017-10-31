@@ -60,10 +60,10 @@ h1 {
 	opacity: .8;
 }
 
-.available {
+/*.available {
 	background-color: lightgrey;
 	color: black;
-}
+}*/
 
 .reserved {
 	background-color: #ADAAAA !important;

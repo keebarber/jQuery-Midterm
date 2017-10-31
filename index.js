@@ -5,66 +5,62 @@ $(function() {
 $(".table").on("click", function() {
 	var className = $(this).attr("class");
 	$(this).addClass("selected");
+	
 	if (className === "table reserved") {
 		$(this).off("click");
-			}
-	else {
+	} else {
 		$("#reserveTable").show(300);
+		$("#reserveName").autofocus = true;
 		let tablenum = $(this).text();
 		$("#tablenum").text(tablenum);
-		}
+	}
 });
 
 //Allows for reserving table on pressing the enter key from an input
 $("input").on("keypress", function(event) {
 	if (event.key == "Enter") {
-	var reserveName = $("#reserveName").val();
-	var reserveSize = $("#reserveSize").val();
-
-
-	$(".details", ".selected").append("<p></p>").text("Party Size:" + reserveSize);
-	// $(".details").append("<br/>");
-	// $(".details", ".selected").prepend("<p></p>").text("Name:" + reserveName);
-
-
-	$(".selected").addClass("reserved");
-	$(".selected").removeClass("selected");
-	// $("#reserveTable").css("display", "none");
-	$("#reserveTable").hide(300);
+		submitReserve();
 	}
-
 });
-//jQuery for keypress on enter
-// $('input[type=text]').on('keydown', function(e) {
-//     if (e.which == 13) {
-//         e.preventDefault();
-//     }
-// });
 
 //Closes reserve table form and marks table selected as reserved
 $("#submit").on("click", function() {
+	submitReserve();
+});
+
+//	Initializes the actual function for processing the reserve data
+function submitReserve() {
 	var reserveName = $("#reserveName").val();
 	var reserveSize = $("#reserveSize").val();
 
-
+//	Adds the reservation details to the on hover box associated with the table
 	$(".details", ".selected").append("<p>Party Size: " + reserveSize + "</p>");
-	// $(".details").append("<br/>");
 	$(".details", ".selected").prepend("<p>Name: " + reserveName +"</p>");
 
-
+//	Adds and removes classes and hides form
 	$(".selected").addClass("reserved");
+	$(".selected").removeClass("available");
 	$(".selected").removeClass("selected");
-	// $("#reserveTable").css("display", "none");
 	$("#reserveTable").hide(300);
 
-});
+//	Clear out input field values
+	$("#reserveName").val("");
+	$("#reserveSize").val("");
+	$("#reservePhone").val("");
+};
 
 //Closes reserve table form without marking table as reserved
 $("#goback").on("click", function() {
-	 $(".selected").removeClass("selected");
-	 // $("#reserveTable").css("display", "none");
-	 $("#reserveTable").hide(300);
+	
+	$(".selected").removeClass("selected");
+	$("#reserveTable").hide(300);
 
+//	Clear out input field values
+	$("#reserveName").val("");
+	$("#reserveSize").val("");
+	$("#reservePhone").val("");
+
+//Prevents bubbling. Clears out reserved table data if not included.
 	 return false;
 });
 
@@ -72,12 +68,12 @@ $("#goback").on("click", function() {
 $(".table").hover(function() {
 	let className = $(this).attr("class");
  	if (className === "table reserved") {
+ 		
  		$(this).css("cursor", "not-allowed");
- 		// $(".details", this).css("display", "block");
  		$(".details", this).show(100);
- 		}
- 		else {
- 			$(this).css("background-color", "rgb(220,220,220)");
+ 		}else {
+ 			$(this).css("background-color", "rgb(200,200,200)");
+ 			$(this).css("cursor", "pointer");
  		}
  	},
  	function() {
