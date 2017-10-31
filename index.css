@@ -43,7 +43,7 @@ h1 {
 	flex-wrap: wrap;
 	padding-top: 10px;
 	text-align: center;
-	border-radius: 5px
+	border-radius: 10px;
 }
 
 .table {
@@ -55,6 +55,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center; 
+	flex-direction: column;
 	color: #AFAAAA;
 	opacity: .8;
 }
@@ -77,7 +78,7 @@ h1 {
 	position: absolute;
 	margin: 0 auto;
 	box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
-	margin-top: 100px;
+	margin-top: 120px;
 	display: none;
 	z-index: 2;
 }
@@ -86,17 +87,17 @@ h1 {
   color: black;
   text-align: left;
   border-top: 1px solid white;
-  padding: 10px 0 0 0;
+  padding: 0px 0 0 0;
 }
 
 .flex-item {
   background-color: white;
   width: 475px;
-  height: 375px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-radius: 15px;
+  margin: 0;
+  /*border-radius: 15px;*/
 }
 
 #hello, #tableNumber {
@@ -111,6 +112,7 @@ h1 {
 
 input {
   margin: 10px 45px;
+  padding: 10px;
   border: none;
   border-bottom: 1px solid grey;
 }
@@ -121,11 +123,13 @@ input:focus {
 }
 
 button {
-  margin: 30px 45px 40px 45px;
-  padding: 25px;
+  margin: 30px 45px 0px 45px;
+  padding: 15px;
   background-color: #008700;
   color: white;
   border: none;
+  font-size: 1.25em;
+  font-weight: 800;
 }
 
 button:focus {
@@ -134,7 +138,7 @@ button:focus {
 }
 
 .flex-item p{
-  text-align: center;ter;
+  text-align: center;
   font-size: .75em;
   margin-top: 0;
   color: #ccc;
@@ -179,5 +183,21 @@ button:hover {
 	text-align: right;
 	color: black;
 	text-decoration: none;
-	margin: 0 20px 20px 0;
+	margin: 20px 20px 0 0;
+}
+
+.details {
+	width: 120px;
+	height: 40px;
+	position: absolute;
+	margin-top: 100px;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: grey;
+	opacity: .5;
+	font-size: .7em;
+	color: black;
+	display: none;
+	margin-top: 10px;
+	margin-left: -55px;
 }

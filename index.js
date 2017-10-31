@@ -16,6 +16,15 @@ $(".table").on("click", function() {
 
 //Closes reserve table form and marks table selected as reserved
 $("#submit").on("click", function() {
+	var reserveName = $("#reserveName").val();
+	var reserveSize = $("#reserveSize").val();
+
+
+	$(".details", ".selected").append("<p></p>").text("Party Size:" + reserveSize);
+	// $(".details").append("<br/>");
+	// $(".details", ".selected").prepend("<p></p>").texta("Name:" + reserveName);
+
+
 	$(".selected").addClass("reserved");
 	$(".selected").removeClass("selected");
 	$("#reserveTable").css("display", "none");
@@ -29,12 +38,17 @@ $("#goback").on("click", function() {
 });
 
 //On mouseover of reserved tables, hides mouse cursor to prevent selecting
-$(".table").on("mouseover", function() {
+$(".table").hover(function() {
 	let className = $(this).attr("class");
  	if (className === "table reserved") {
  		$(this).css("cursor", "none");
+ 		$(".details", this).css("display", "block");
+ 		}
+ 	},
+ 	function() {
+ 		$(".details", this).css("display", "none");
  	}
-});
+);
 // $(".table").on("click", function() {
 // 	var className = $(this).attr("class");
 // 	//var tableSelected = event.target;
