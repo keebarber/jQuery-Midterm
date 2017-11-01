@@ -10,7 +10,7 @@ $(".table").on("click", function() {
 		$(this).off("click");
 	} else {
 		$("#reserveTable").show(300);
-		$("#reserveName").autofocus = true;
+		// $("#reserveName").autofocus = true;
 		let tablenum = $(this).text();
 		$("#tablenum").text(tablenum);
 	}
@@ -64,22 +64,45 @@ $("#goback").on("click", function() {
 	 return false;
 });
 
+//Apparently I'm not allowed to use this. :)
+
 //On mouseover of reserved tables, hides mouse cursor to prevent selecting
-$(".table").hover(function() {
+// $(".table").hover(function() {
+// 	let className = $(this).attr("class");
+//  	if (className === "table reserved") {
+ 		
+//  		$(this).css("cursor", "not-allowed");
+//  		$(".details", this).show(100);
+//  		}else {
+//  			$(this).css("background-color", "rgb(200,200,200)");
+//  			$(this).css("cursor", "pointer");
+//  		}
+//  	},
+//  	function() {
+//  		$(".details", this).hide(100);
+//  		$(this).css("background-color", "#EEEEEE");
+//  	}
+// );
+
+
+//Using the .on event handler, changing elements on mouse enter and leave 
+$(".table").on("mouseenter", function() {
 	let className = $(this).attr("class");
  	if (className === "table reserved") {
  		
  		$(this).css("cursor", "not-allowed");
  		$(".details", this).show(100);
- 		}else {
+ 		} else {
  			$(this).css("background-color", "rgb(200,200,200)");
  			$(this).css("cursor", "pointer");
  		}
- 	},
- 	function() {
+ 	});
+
+$(".table").on("mouseleave", function() {
+	let className = $(this).attr("class");
  		$(".details", this).hide(100);
  		$(this).css("background-color", "#EEEEEE");
- 	}
-);
+ });
+
 
 });
